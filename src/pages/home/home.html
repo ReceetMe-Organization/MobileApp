@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <!--<button ion-button menuToggle>-->
+      <!--<ion-icon name="menu"></ion-icon>-->
+    <!--</button>-->
+    <ion-title>{{db_json.home_page.header}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content>
+    <h3 center class="text-center">
+      <img src="assets/icon/logo_receet.png" alt="" width="100px">
+    </h3>
+    <p class="text-center">
+      E-Receipt Mobile App
+    </p>
+    <p class="text-center">
+      <button class = "btn facebook" ion-button center (click)="facebookLogin()">
+        {{db_json.home_page.button_facebook}}
+        <!--Facebook Login-->
+      </button>
+    </p>
+    <p class="text-center">
+      <button class = "btn" ion-button center [navPush]="signup">
+        {{db_json.home_page.button_sign_up}}
+        <!--Sign Up-->
+      </button>
+    </p>
+  <!--<p class="text-center">-->
+    <!--<button ion-button center [navPush]="contactus">-->
+      <!--Contact Us-->
+    <!--</button>-->
+  <!--</p>-->
+
+    <p class="text-center">
+      <button class = "btn" ion-button center [navPush]="login">
+        {{db_json.home_page.button_login}}
+        <!--Login-->
+      </button>
+    </p>
+
+</ion-content>

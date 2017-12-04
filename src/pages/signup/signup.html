@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      {{db_json.sign_up_page.header}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="signupForm" (submit)="signupUser()" novalidate>
+    <ion-item>
+      <ion-label stacked>{{db_json.sign_up_page.label_label_first_name}}</ion-label>
+      <ion-input formControlName="first" type="text" placeholder={{db_json.sign_up_page.label_name}}
+                 [class.invalid]="!signupForm.controls.first.valid && signupForm.controls.first.dirty"></ion-input>
+    </ion-item>
+<ion-item class="error-message" *ngIf="!signupForm.controls.first.valid  && signupForm.controls.first.dirty">
+    <p>Please enter a first name.</p>
+  </ion-item>
+    <ion-item>
+      <ion-label stacked>{{db_json.sign_up_page.label_label_email}}</ion-label>
+      <ion-input formControlName="email" type="email" placeholder={{db_json.sign_up_page.label_mail}}
+
+                 [class.invalid]="!signupForm.controls.email.valid && signupForm.controls.email.dirty"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!signupForm.controls.email.valid  && signupForm.controls.email.dirty">
+      <p>Please enter a valid email.</p>
+    </ion-item>
+    <!--<ion-item class="error-message" *ngIf="signupForm.controls.email.hasError('maxlength')  &&-->
+      <!--loginForm.controls.email.dirty">-->
+      <!--<p>Max 254 symbols</p>-->
+    <!--</ion-item>-->
+
+    <ion-item>
+      <ion-label stacked>{{db_json.sign_up_page.label_label_pass}}</ion-label>
+      <ion-input formControlName="password" type="password"  placeholder={{db_json.sign_up_page.label_pass}}
+                 [class.invalid]="!signupForm.controls.password.valid && signupForm.controls.password.dirty"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!signupForm.controls.password.valid  && signupForm.controls.password.dirty">
+      <p>Your password needs more than 6 characters.</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>{{db_json.sign_up_page.label_label_re_pass}}</ion-label>
+      <ion-input formControlName="password_re" type="password"  placeholder={{db_json.sign_up_page.label_re_pass}}
+                 [class.invalid]="!signupForm.controls.password_re.valid && signupForm.controls.password_re.dirty"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!signupForm.controls.password_re.valid  && signupForm.controls.password_re.dirty">
+      <p>Your password needs more than 6 characters.</p>
+    </ion-item>
+
+    <button ion-button block type="submit">
+      {{db_json.sign_up_page.label_button}}
+    </button>
+
+  </form>
+
+</ion-content>
